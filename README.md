@@ -1,11 +1,11 @@
 # Classifying Wildfire Size
 
-With a warming atmosphere and expanding housing settlements, wildland fires have become more dangerous than ever. Using a dataset of 1.88 million U.S. wildfires, I try to predict what size class a fire will reach based on features known at the time of discovery. This will not replace current monitoring systems, but hopefully will help act as an alarm to bring attention to potentially overlooked fires. 
+With a warming atmosphere and expanding housing settlements, wildland fires have become more dangerous than ever. Using a dataset of 1.88 million U.S. wildfires, I try to predict what size class a fire will reach based on features known at the time of discovery. This will not replace current monitoring systems, but hopefully will help augment firefighting monitoring systems by bringing attention to potentially overlooked fires. 
 
 # Metric 
-I choose F1 score as my metric n evaluating my models because there is a need to balance the danger to lives and property from underestimating a fire and limited resources to devote to firefighting.
+I choose F1 score as my metric for evaluating my models because there is a need to balance the danger to lives and property from underestimating a fire and the limited resources available for fighting wildfires.
 
-# TAKE 1 (8-8-2018)
+<!-- # TAKE 1 (8-8-2018)
 Notebook Progression:
 1. Load dataset into pandas and do exploratory data analysis. 
 2. Experiment with cleaning data and filling in missing information.
@@ -17,19 +17,18 @@ Notebook Progression:
 5. Create 5-fold cross validation functions, both with and without oversampling. Not much signal.
 6. Test scraping weather data (max_temp, precipitation, wind speed) from NOAA weather API that are known to be useful for assessing fire risk.
 7. Simplify the 7 default size classes in the dataset to 3 because the extra confusion do not add much value.
-<!-- 8. Run models with only 3 classes.
-9. Scale up weather scraping to the 10k subset and incorporated stratified k-fold in cross validation.
-10. Test model on another random 10k subset from. UNREASONABLE SCORING METHOD.
-11. Test model on 10k subset randomly sampled from 500000 most recent fires. UNREASONABLE TESTING. 
-12. Pivot to do more feature mining on G dataset-->
-13. Extend engineered features to full dataset, but no weather features due to issues with API.
-RESULTS on test data (10k subset) ~0.10 F1 score on . 
 
-# TAKE 2 (soon)
-1. Scrape weather from Google BigQuery public datasets. -- Done
-2. Look up location altitude based on lat/long. -- Done 
-3. Adjust fire history function
-4. More features
-<!-- 5. Redo EDA -->
+13. Extend engineered features to full dataset, but no weather features due to issues with API.
+RESULTS on test data (10k subset) ~0.10 F1 score on .  -->
+
+# TAKE 2 - Ongoing
+All notebooks under the prefix of Fires2. 
+1. Assess available columns and perform basic EDA.
+2. Fill in missing location data and extract additional date features.
+3. Look up location elevation based on lat/long. 
+4. Query and join weather data for corresponding fires
+5. Clean weather data and hold out rows for modeling.
+6. Begin with logistic regression and random forest models.
+7. Further modeling: under construction
 
 
